@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Über mich - Liam Andretzki</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -12,19 +13,24 @@
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            transition: background-color 0.3s ease;
         }
+
         header {
             background-color: #1f2937;
             color: white;
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
+
         header h1 {
             margin: 0;
             font-size: 2.5em;
             letter-spacing: 1.5px;
         }
+
         nav {
             display: flex;
             justify-content: center;
@@ -32,16 +38,20 @@
             padding: 15px 0;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
+            margin: 0 15px;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
+
         nav a:hover {
             color: #60a5fa;
+            transform: scale(1.1);
         }
+
         .container {
             display: grid;
             grid-template-columns: 1fr 3fr;
@@ -49,57 +59,77 @@
             padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
+            animation: fadeIn 1s ease-out;
         }
+
         .sidebar {
             background-color: #e5e7eb;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .sidebar h2 {
             font-size: 1.5em;
             margin-bottom: 15px;
             color: #1f2937;
         }
+
         .sidebar ul {
             list-style-type: none;
             padding: 0;
         }
+
         .sidebar ul li {
             margin-bottom: 10px;
         }
+
         .sidebar ul li a {
             text-decoration: none;
             color: #4b5563;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
         }
+
+        .sidebar ul li a i {
+            margin-right: 8px;
+        }
+
         .sidebar ul li a:hover {
             color: #60a5fa;
+            transform: scale(1.05);
         }
+
         .content {
             background-color: white;
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .content h2 {
             font-size: 2em;
             margin-bottom: 20px;
             color: #1f2937;
         }
+
         .content p {
             margin-bottom: 20px;
             color: #4b5563;
         }
+
         .content ul {
             list-style-type: none;
             padding: 0;
         }
+
         .content ul li {
             margin-bottom: 10px;
             font-size: 1.1em;
         }
+
         footer {
             background-color: #1f2937;
             color: white;
@@ -107,6 +137,7 @@
             padding: 20px 0;
             margin-top: 40px;
         }
+
         footer p {
             margin: 0;
             font-size: 0.9em;
@@ -161,49 +192,56 @@
                 padding: 10px;
             }
         }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Liam Andretzki</h1>
+        <h1>Über mich</h1>
     </header>
 
     <nav>
-        <a href="index.html">Start</a>
+        <a href="index.html"><i class="fas fa-home"></i> Start</a>
     </nav>
 
     <div class="container">
         <aside class="sidebar">
             <h2>Info</h2>
             <ul>
-                <li><a href="#about">Über mich</a></li>
-                <li><a href="#hobbies">Hobbys</a></li>
-                <li><a href="#music">Musik</a></li>
-                <li><a href="#why">Warum ich das mache?</a></li>
-                <li><a href="#copy">Urheberrecht</a></li>
+                <li><a href="#about"><i class="fas fa-person"></i>Über mich</a></li>
+                <li><a href="#hobbies"><i class="fas fa-smile"></i>Hobbys</a></li>
+                <li><a href="#music"><i class="fas fa-music"></i>Musik</a></li>
+                <li><a href="#why"><i class="fas fa-question"></i>Warum ich das mache?</a></li>
+                <li><a href="#copy"><i class="fas fa-copyright"></i>Urheberrecht</a></li>
             </ul>
         </aside>
 
         <section class="content">
-            <h2 id="about">Über mich</h2>
+            <h2 id="about"><i class="fas fa-info"></i> Über mich</h2>
             <p>Hallo! Mein Name ist Liam Andretzki, ich bin 18 Jahre alt und derzeit mache ich ein Jahr Elektrotechnik am Hellweg Berufskolleg. Ich bin sehr interessiert daran, mehr über Elektrotechnik und Programmierung zu lernen.</p>
 
-            <h2 id="hobbies">Hobbys</h2>
+            <h2 id="hobbies"><i class="fas fa-smile"></i> Hobbys</h2>
             <ul>
-                <li>Ich bin sehr Computer begeistert</li>
+                <li>Ich programmiere gerne und spiele gerne Videospiele</li>
             </ul>
 
-            <h2 id="music">Musik</h2>
+            <h2 id="music"><i class="fas fa-music"></i> Musik</h2>
             <ul>
                 <li>Rammstein</li>
                 <li>Amerikanischer Rap, insbesondere Kanye West</li>
             </ul>
 
-            <h2 id="why">Warum ich das mache?</h2>
+            <h2 id="why"><i class="fas fa-question"></i> Warum ich das mache?</h2>
             <p>Ich habe mich für dieses Jahr Elektrotechnik entschieden, weil ich ein starkes Interesse daran habe, die Grundlagen dieser faszinierenden Disziplin zu verstehen. Gleichzeitig möchte ich meine Programmierfähigkeiten weiterentwickeln, um in Zukunft in diesem Bereich arbeiten zu können.</p>
 
-            <h2 id="copy">Urheberrecht</h2>
+            <h2 id="copy"><i class="fas fa-copyright"></i> Urheberrecht</h2>
             <p>Der gesamte Inhalt dieser Website, einschließlich, aber nicht beschränkt auf Texte, Bilder, Grafiken und Design, ist urheberrechtlich geschützt. Jede unerlaubte Verwendung, Vervielfältigung oder Verbreitung der Inhalte dieser Website ist ohne ausdrückliche schriftliche Genehmigung des Rechteinhabers untersagt. Alle auf dieser Website genannten Marken, Logos und Servicemarken sind Eigentum ihrer jeweiligen Inhaber.</p>
 
             <p>Die Inhalte dieser Website dürfen nur für persönliche, nicht-kommerzielle Zwecke verwendet werden. Jegliche Nutzung für kommerzielle Zwecke bedarf der vorherigen schriftlichen Zustimmung des Rechteinhabers.</p>

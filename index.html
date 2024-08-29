@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elektrotechnik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="sw.js">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -12,6 +15,7 @@
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            transition: background-color 0.3s ease;
         }
 
         header {
@@ -19,7 +23,8 @@
             color: white;
             padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         header h1 {
@@ -39,13 +44,20 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 20px;
+            margin: 0 15px;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a i {
+            margin-right: 8px;
         }
 
         nav a:hover {
             color: #60a5fa;
+            transform: scale(1.1);
         }
 
         .container {
@@ -55,6 +67,7 @@
             padding: 40px 20px;
             max-width: 1200px;
             margin: auto;
+            animation: fadeIn 1s ease;
         }
 
         .sidebar {
@@ -62,6 +75,7 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         .sidebar h2 {
@@ -83,11 +97,18 @@
             text-decoration: none;
             color: #4b5563;
             font-weight: 500;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar ul li a i {
+            margin-right: 8px;
         }
 
         .sidebar ul li a:hover {
             color: #60a5fa;
+            transform: scale(1.05);
         }
 
         .content {
@@ -95,6 +116,7 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         .content h2 {
@@ -114,6 +136,8 @@
             text-align: center;
             padding: 20px 0;
             margin-top: 40px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
         }
 
         footer p {
@@ -121,7 +145,6 @@
             font-size: 0.9em;
         }
 
-        /* Responsive Styles */
         @media (max-width: 768px) {
             .container {
                 grid-template-columns: 1fr;
@@ -170,41 +193,102 @@
                 padding: 10px;
             }
         }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll animations */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Elektrotechnik Website Version 0.1</h1>
+        <h1>Elektrotechnik Website Version 0.2</h1>
     </header>
 
     <nav>
-        <a href="#home">Start</a>
-        <a href="#kontakt">Kontakt(not ready)</a>
-        <a href="übermich.html">Über Mich</a>
+        <a href="#home"><i class="fas fa-home"></i>Start</a>
+        <a href="#kontakt"><i class="fas fa-envelope"></i>Kontakt (not ready)</a>
+        <a href="übermich.html"><i class="fas fa-user"></i>Über Mich</a>
+        <a href="changelog.html"><i class="fas fa-cogs"></i>Changelog</a>
     </nav>
 
     <div class="container">
         <aside class="sidebar">
             <h2>Kategorien</h2>
             <ul>
-                <li><a href="grundlagen.html">Grundlagen</a></li>
-                <li><a href="#schaltungen">Schaltungen (not ready)</a></li>
-                <li><a href="#bauteile">Bauteile (not ready)</a></li>
-                <li><a href="#tutorials">Tutorials (not ready)</a></li>
+                <li><a href="grundlagen.html#elektro"><i class="fas fa-lightbulb"></i>Grundlagen</a></li>
+                <li><a href="#schaltungen"><i class="fas fa-plug"></i>Schaltungen</a></li>
+                <li><a href="#bauteile"><i class="fas fa-cogs"></i>Bauteile</a></li>
+                <li><a href="#tutorials"><i class="fas fa-book"></i>Tutorials</a></li>
             </ul>
         </aside>
 
         <section class="content">
-            <h2>Willkommen zur Elektrotechnik</h2>
+            <h2 id="elektro">Willkommen zur Elektrotechnik</h2>
             <p>In dieser Plattform findest du alles, was du über Elektrotechnik wissen musst. Von den Grundlagen bis hin zu komplexen Projekten und Schaltungen.</p>
-            <p>Stöbere durch die verschiedenen Kategorien, um Tutorials, Artikel und spannende Projekte zu entdecken.</p>
+            <p><i class="fas fa-info"></i> Neue Informationen werden ständig hinzugefügt</p>
         </section>
     </div>
+
+    <button id="install-button" style="display: none;">Zum Startbildschirm hinzufügen</button>
+
 
     <footer>
         <p>&copy; 2024 Elektrotechnik. Alle Rechte vorbehalten.</p>
     </footer>
 
 </body>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                console.log('Service Worker registriert mit Bereich:', registration.scope);
+            }, function(error) {
+                console.log('Service Worker Registrierung fehlgeschlagen:', error);
+            });
+        });
+    }
+</script>
+
+<script>
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        // Hier kannst du deinen Button anzeigen
+        document.getElementById('install-button').style.display = 'block';
+    });
+
+    document.getElementById('install-button').addEventListener('click', () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt();
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+            });
+        }
+    });
+</script>
+
+
+
+
 </html>
