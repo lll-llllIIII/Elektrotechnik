@@ -111,6 +111,56 @@
             margin: 0;
             font-size: 0.9em;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .sidebar {
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                font-size: 1em;
+            }
+
+            .content h2 {
+                font-size: 1.5em;
+            }
+
+            .content p {
+                font-size: 0.9em;
+            }
+
+            footer p {
+                font-size: 0.8em;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -131,7 +181,7 @@
                 <li><a href="#hobbies">Hobbys</a></li>
                 <li><a href="#music">Musik</a></li>
                 <li><a href="#why">Warum ich das mache?</a></li>
-                <li><a href="#copy">Uhrheberrecht</a></li>
+                <li><a href="#copy">Urheberrecht</a></li>
             </ul>
         </aside>
 
@@ -153,10 +203,10 @@
             <h2 id="why">Warum ich das mache?</h2>
             <p>Ich habe mich für dieses Jahr Elektrotechnik entschieden, weil ich ein starkes Interesse daran habe, die Grundlagen dieser faszinierenden Disziplin zu verstehen. Gleichzeitig möchte ich meine Programmierfähigkeiten weiterentwickeln, um in Zukunft in diesem Bereich arbeiten zu können.</p>
 
-            <h2 id="copy">&copy Uhrheberrecht</h2>
+            <h2 id="copy">Urheberrecht</h2>
             <p>Der gesamte Inhalt dieser Website, einschließlich, aber nicht beschränkt auf Texte, Bilder, Grafiken und Design, ist urheberrechtlich geschützt. Jede unerlaubte Verwendung, Vervielfältigung oder Verbreitung der Inhalte dieser Website ist ohne ausdrückliche schriftliche Genehmigung des Rechteinhabers untersagt. Alle auf dieser Website genannten Marken, Logos und Servicemarken sind Eigentum ihrer jeweiligen Inhaber.</p>
 
-                <p>Die Inhalte dieser Website dürfen nur für persönliche, nicht-kommerzielle Zwecke verwendet werden. Jegliche Nutzung für kommerzielle Zwecke bedarf der vorherigen schriftlichen Zustimmung des Rechteinhabers.</p>
+            <p>Die Inhalte dieser Website dürfen nur für persönliche, nicht-kommerzielle Zwecke verwendet werden. Jegliche Nutzung für kommerzielle Zwecke bedarf der vorherigen schriftlichen Zustimmung des Rechteinhabers.</p>
 
         </section>
     </div>
