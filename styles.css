@@ -1,4 +1,3 @@
-/* Allgemeine Stile */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -10,7 +9,7 @@ body {
 }
 
 header {
-    background: #1a1a1a;
+    background: #333;
     color: #fff;
     padding: 10px 0;
     text-align: center;
@@ -22,9 +21,8 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* Navigation */
 nav {
-    background: #1a1a1a;
+    background: #444;
     padding: 10px;
     text-align: center;
     transition: background-color 0.3s ease;
@@ -46,14 +44,12 @@ nav a:hover {
     border-radius: 5px;
 }
 
-/* Container */
 .container {
     display: flex;
     flex-direction: row;
     margin: 20px;
 }
 
-/* Sidebar */
 .sidebar {
     width: 25%;
     padding: 20px;
@@ -96,7 +92,6 @@ nav a:hover {
     transform: scale(1.05);
 }
 
-/* Content Bereich */
 .content {
     flex: 1;
     padding: 20px;
@@ -119,16 +114,14 @@ nav a:hover {
     margin: 0 auto;
 }
 
-/* Footer */
 footer {
-    background: #1a1a1a;
+    background: #333;
     color: #f4f4f4;
     text-align: center;
     padding: 10px 0;
     margin-top: 20px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -137,5 +130,49 @@ footer {
     .sidebar {
         width: 100%;
         margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    #img {
+        width: 80%;  
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        font-size: 0.9em;
+        padding: 6px 12px;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 8px;
+    }
+
+    .sidebar ul li a {
+        font-size: 0.9em;
+    }
+
+    .content h2 {
+        font-size: 1.5em;
+    }
+
+    #img {
+        width: 90%;  
+    }
+
+    footer p {
+        font-size: 0.8em;
+    }
+
+    .container {
+        padding: 10px;
     }
 }
