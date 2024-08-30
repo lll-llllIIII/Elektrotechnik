@@ -55,7 +55,7 @@ nav a:hover {
 
 /* Sidebar */
 .sidebar {
-    width: 25%;
+    max-width: 300px;
     padding: 20px;
     background: #2a2a2a;
     color: #f4f4f4;
@@ -132,10 +132,22 @@ footer {
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
+        margin: 10px; 
     }
 
     .sidebar {
         width: 100%;
         margin-right: 0;
+        margin-bottom: 20px; 
+    }
+
+    .content {
+        margin-left: 0; 
+    }
+}
+
+@media (min-width: 769px) {
+    .content {
+        margin-left: 20px;
     }
 }
