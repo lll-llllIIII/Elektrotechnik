@@ -1,0 +1,141 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+/* Navigation */
+nav {
+    background: #1a1a1a;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+nav a {
+    color: #f4f4f4;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 1.1em;
+    display: inline-block;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav a:hover {
+    color: #60a5fa;
+    transform: scale(1.1);
+    background: #333;
+    border-radius: 5px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background: #2a2a2a;
+    color: #f4f4f4;
+    margin-right: 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar ul li a i {
+    margin-right: 8px;
+}
+
+.sidebar ul li a:hover {
+    color: #60a5fa;
+    transform: scale(1.05);
+}
+
+/* Content Bereich */
+.content {
+    flex: 1;
+    padding: 20px;
+    background: #2a2a2a;
+    color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.content h2 {
+    margin-top: 0;
+    color: #fff;
+}
+
+#img {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Footer */
+footer {
+    background: #1a1a1a;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-right: 0;
+    }
+}
