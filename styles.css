@@ -8,6 +8,13 @@ body {
     color: #f4f4f4;
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden; /* Verhindert horizontales Scrollen */
+    box-sizing: border-box; /* Inklusive Padding und Border in der Breite */
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* Vererbt box-sizing auf alle Elemente */
 }
 
 header {
@@ -53,11 +60,12 @@ nav a:hover {
     flex-direction: row;
     margin: 20px;
     gap: 20px; /* Abstand zwischen Sidebar und Content */
+    overflow: hidden; /* Verhindert das Überlaufen von Inhalten */
 }
 
 /* Sidebar */
 .sidebar {
-    flex: 0 0 300px; /* Festgelegte Breite */
+    flex: 0 0 300px; /* Feste Breite für Sidebar */
     padding: 20px;
     background: #2a2a2a;
     color: #f4f4f4;
