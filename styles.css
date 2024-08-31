@@ -1,82 +1,96 @@
 /* Allgemeine Stile */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Nunito", sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
-    color: #f4f4f4;
+    background-color: #000000;
+    color: #e0e0e0;
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden; /* Verhindert horizontales Scrollen */
-    box-sizing: border-box; /* Inklusive Padding und Border in der Breite */
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
+/* Globale Elemente */
 *,
 *::before,
 *::after {
-    box-sizing: inherit; /* Vererbt box-sizing auf alle Elemente */
+    box-sizing: inherit;
 }
 
+/* Header */
 header {
-    background: #1a1a1a;
-    color: #fff;
-    padding: 10px 0;
+    background: #000000;
+    color: #e0e0e0;
+    padding: 20px;
     text-align: center;
-    transition: background-color 0.3s ease;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #333;
+    animation: slideInDown 0.5s ease-out; /* Animation für Header */
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #ffffff; /* Auffällige Farbe für die Hauptüberschrift */
 }
 
 /* Navigation */
 nav {
-    background: #1a1a1a;
-    padding: 10px;
+    background: #000000;
+    padding: 10px 0;
     text-align: center;
-    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.5s ease-out 0.2s; /* Animation für Navigation */
 }
 
 nav a {
-    color: #f4f4f4;
+    color: #e0e0e0;
     text-decoration: none;
-    padding: 8px 16px;
-    font-size: 1.1em;
+    padding: 10px 20px;
+    font-size: 1.2em;
     display: inline-block;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+    border-radius: 5px;
 }
 
 nav a:hover {
-    color: #60a5fa;
+    color: #17cdff;
+    background: #131313;
     transform: scale(1.1);
-    background: #333;
-    border-radius: 5px;
 }
 
 /* Container */
 .container {
     display: flex;
     flex-direction: row;
-    margin: 0 auto; /* Zentriert den Container */
-    max-width: 100vw; /* Begrenzung der maximalen Breite auf den Viewport */
-    overflow: hidden; /* Verhindert das Überlaufen von Inhalten */
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 20px;
+    animation: fadeInUp 0.7s ease-out; /* Animation für Container */
 }
 
 /* Sidebar */
 .sidebar {
-    flex: 0 0 300px; /* Feste Breite für Sidebar */
+    flex: 0 0 320px;
     padding: 20px;
-    background: #2a2a2a;
-    color: #f4f4f4;
-    margin-right: 20px;
+    background: #1e1e1e;
+    color: #e0e0e0;
     border-radius: 8px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.7s ease-out 0.3s; /* Animation für Sidebar */
 }
 
 .sidebar h2 {
     margin-top: 0;
+    font-size: 1.8em;
+    color: #ffffff;
 }
 
 .sidebar ul {
@@ -85,12 +99,12 @@ nav a:hover {
 }
 
 .sidebar ul li {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .sidebar ul li a {
     text-decoration: none;
-    color: #f4f4f4;
+    color: #e0e0e0;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -98,11 +112,11 @@ nav a:hover {
 }
 
 .sidebar ul li a i {
-    margin-right: 8px;
+    margin-right: 10px;
 }
 
 .sidebar ul li a:hover {
-    color: #60a5fa;
+    color: #17cdff;
     transform: scale(1.05);
 }
 
@@ -110,40 +124,75 @@ nav a:hover {
 .content {
     flex: 1;
     padding: 20px;
-    background: #2a2a2a;
-    color: #f4f4f4;
+    background: #1e1e1e;
+    color: #e0e0e0;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    animation: fadeInUp 0.7s ease-out 0.4s; /* Animation für Content */
 }
 
 .content h2 {
     margin-top: 0;
-    color: #fff;
+    font-size: 2.2em;
+    color: #ffffff;
 }
 
+/* Bilder */
 #img {
-    width: 50%;
+    width: 100%;
     height: auto;
     border-radius: 8px;
     display: block;
-    margin: 0 auto;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 0.7s ease-out 0.5s; /* Animation für Bilder */
 }
 
 /* Footer */
 footer {
-    background: #1a1a1a;
-    color: #f4f4f4;
+    background: #000000;
+    color: #e0e0e0;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px;
     margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
+    border-top: 2px solid #333;
+    animation: fadeInUp 0.5s ease-out 0.6s; /* Animation für Footer */
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+/* Animationen */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
-        margin: 10px;
-        gap: 20px; /* Abstand zwischen Sidebar und Content auf kleinen Bildschirmen */
+        gap: 10px;
     }
 
     .sidebar {
@@ -157,6 +206,10 @@ footer {
 }
 
 @media (min-width: 769px) {
+    .container {
+        padding: 20px;
+    }
+
     .content {
         margin-left: 20px;
     }
