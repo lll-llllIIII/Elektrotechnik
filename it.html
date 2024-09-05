@@ -17,8 +17,8 @@
     </header>
 
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i>Start</a>
-        <a href="kontakt.html"><i class="fas fa-envelope"></i>Kontakt</a>
+        <a href="index.html"><i class="fas fa-home"></i> Start</a>
+        <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
     </nav>
 
     <div class="container">
@@ -119,5 +119,19 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        // Scroll-Animation für die Links in der Sidebar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();  // Verhindert das direkte Springen
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'  // Sanfter Scroll
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

@@ -16,8 +16,8 @@
     </header>
 
     <nav>
-        <a href="index.html"><i class="fas fa-home"></i>Start</a>
-        <a href="#kontakt"><i class="fas fa-envelope"></i>Kontakt</a>
+        <a href="index.html"><i class="fas fa-home"></i> Start</a>
+        <a href="#kontakt"><i class="fas fa-envelope"></i> Kontakt</a>
     </nav>
 
     <div class="container">
@@ -35,6 +35,7 @@
                 <li><a href="#energieerzeugung"><i class="fas fa-lightbulb"></i>Energieerzeugung</a></li>
                 <li><a href="#kommunikation"><i class="fas fa-lightbulb"></i>Kommunikationstechnik</a></li>
                 <li><a href="#robotik"><i class="fas fa-lightbulb"></i>Robotik</a></li>
+                <li><a href="#zusätze"><i class="fas fa-lightbulb"></i>Zusätze</a></li>
             </ul>
         </aside>
 
@@ -136,6 +137,92 @@
                 <li><strong>Sensoren und Aktuatoren:</strong> Komponenten, die Roboter in die Lage versetzen, ihre Umgebung wahrzunehmen und darauf zu reagieren.</li>
                 <li><strong>Steuerungssysteme:</strong> Systeme, die die Bewegungen und Handlungen von Robotern steuern und koordinieren.</li>
             </ul>
+
+            <h2 id="zusätze">Zusätze</h2>
+            <p>Robotik ist der Bereich der Elektrotechnik, der sich mit der Konstruktion und dem Einsatz von Robotern beschäftigt:</p>
+            <ul>
+                <table border="1">
+                    <tr>
+                        <th>Vorsatz</th>
+                        <th>Symbol</th>
+                        <th>Exponent</th>
+                        <th>Faktor</th>
+                    </tr>
+                    <tr>
+                        <td>Pico</td>
+                        <td>p</td>
+                        <td>10⁻¹²</td>
+                        <td>0,000000000001</td>
+                    </tr>
+                    <tr>
+                        <td>Nano</td>
+                        <td>n</td>
+                        <td>10⁻⁹</td>
+                        <td>0,000000001</td>
+                    </tr>
+                    <tr>
+                        <td>Micro</td>
+                        <td>µ</td>
+                        <td>10⁻⁶</td>
+                        <td>0,000001</td>
+                    </tr>
+                    <tr>
+                        <td>Milli</td>
+                        <td>m</td>
+                        <td>10⁻³</td>
+                        <td>0,001</td>
+                    </tr>
+                    <tr>
+                        <td>Centi</td>
+                        <td>c</td>
+                        <td>10⁻²</td>
+                        <td>0,01</td>
+                    </tr>
+                    <tr>
+                        <td>base unit</td>
+                        <td></td>
+                        <td>10⁻⁰</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Deka</td>
+                        <td>da</td>
+                        <td>10¹</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>Hekto</td>
+                        <td>h</td>
+                        <td>10²</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <td>Kilo</td>
+                        <td>k</td>
+                        <td>10³</td>
+                        <td>1.000</td>
+                    </tr>
+                    <tr>
+                        <td>Mega</td>
+                        <td>M</td>
+                        <td>10⁶</td>
+                        <td>1.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Giga</td>
+                        <td>G</td>
+                        <td>10⁹</td>
+                        <td>1.000.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Terra</td>
+                        <td>T</td>
+                        <td>10¹²</td>
+                        <td>1.000.000.000.000</td>
+                    </tr>
+                </table>
+                
+            </ul>
         </section>
     </div>
 
@@ -144,5 +231,19 @@
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+
+    <script>
+        // Scroll-Animation für die Links in der Sidebar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();  // Verhindert das direkte Springen
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'  // Sanfter Scroll
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>

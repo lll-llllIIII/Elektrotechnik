@@ -28,11 +28,11 @@
         <aside class="sidebar">
             <h2>Info</h2>
             <ul>
-                <li><a href="#about"><i class="fas fa-person"></i>Über mich</a></li>
-                <li><a href="#hobbies"><i class="fas fa-smile"></i>Hobbys</a></li>
-                <li><a href="#music"><i class="fas fa-music"></i>Musik</a></li>
-                <li><a href="#why"><i class="fas fa-question"></i>Warum ich das mache?</a></li>
-                <li><a href="#copy"><i class="fas fa-copyright"></i>Urheberrecht</a></li>
+                <li><a href="#about"><i class="fas fa-person"></i> Über mich</a></li>
+                <li><a href="#hobbies"><i class="fas fa-smile"></i> Hobbys</a></li>
+                <li><a href="#music"><i class="fas fa-music"></i> Musik</a></li>
+                <li><a href="#why"><i class="fas fa-question"></i> Warum ich das mache?</a></li>
+                <li><a href="#copy"><i class="fas fa-copyright"></i> Urheberrecht</a></li>
             </ul>
         </aside>
 
@@ -65,6 +65,19 @@
     <footer>
         <p>&copy; 2024 Liam Andretzki. Alle Rechte vorbehalten.</p>
     </footer>
+
+    <script>
+        // Scroll-Animation für die Links in der Sidebar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();  // Verhindert das direkte Springen
+    
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'  // Sanfter Scroll
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
