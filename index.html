@@ -1,34 +1,193 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="styles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira
-+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=League+Spartan:wght@100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=SUSE:wght@100..800&display=swap" rel="stylesheet">
+    <!-- Material Icons laden -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        /* Allgemeine Stile */
+        body {
+            font-family: "Fira Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #333;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        header p {
+            font-size: 1.2em;
+        }
+
+        /* Grid-Bereich */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .grid-item,
+        .accordion-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            text-decoration: none; /* Entfernt den Unterstrich */
+        }
+
+        .grid-item:hover,
+        .accordion-item:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item .material-icons,
+        .accordion-item .material-icons {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #17cdff;
+            transition: transform 0.3s ease;
+        }
+
+        .grid-item:hover .material-icons,
+        .accordion-item:hover .material-icons {
+            transform: scale(1.2);
+        }
+
+        .grid-item h3,
+        .accordion-item h3 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        /* Akkordeon-Stile */
+        .accordion-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            background-color: #1e1e1e;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .accordion-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.5em;
+            padding: 40px 20px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .accordion-header i {
+            font-size: 36px;
+            transition: transform 0.3s ease;
+        }
+
+        .accordion-header.active i {
+            transform: rotate(180deg);
+        }
+
+        .accordion-content {
+            max-height: 0; /* Start mit einer Höhe von 0 */
+            overflow: hidden; /* Versteckt den Inhalt */
+            transition: max-height 0.3s ease; /* Animation für die Höhe */
+            padding: 0 20px; /* Innenabstand */
+            background-color: #2c2c2c;
+            text-align: left;
+        }
+
+        .accordion-content a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; /* Entfernt den Unterstrich bei den Links im Akkordeon */
+            color: #17cdff;
+            padding: 10px 0;
+            font-size: 1.2em;
+            transition: transform 0.3s ease; /* Animation beim Hover */
+        }
+
+        .accordion-content a:hover {
+            transform: translateX(5px); /* Leichte Verschiebung bei Hover */
+        }
+
+        .accordion-content a i {
+            margin-right: 10px; /* Abstand zwischen Icon und Text */
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #fff;
+            border-top: 2px solid #333;
+        }
+    </style>
 </head>
+
 <body>
 
     <header>
         <h1>Willkommen</h1>
         <p>Erfahre mehr über verschiedene Themen und finde die Informationen, die du suchst.</p>
-        <p>Version 0.5 - Letztes Update 5. September</p>
+        <p>Version 0.6 - Letztes Update 29. September</p>
     </header>
 
-    <nav>
-        <h1>Themen</h1>
-        <a href="elektrotechnik.html"><i class="fas fa-lightbulb"></i> Elektrotechnik</a>
-        <a href="it.html"><i class="fas fa-laptop-code"></i> IT</a>
-        <a href="kontakt.html"><i class="fas fa-envelope"></i> Kontakt</a>
-        <a href="übermich.html"><i class="fas fa-user"></i> Über Mich</a>
-        <a href="changelog.html"><i class="fas fa-cogs"></i> Changelog</a>
-        <a href="planung.html"><i class="fas fa-question"></i> Planung</a>
-    </nav>
-        </section>
+    <div class="grid-container">
+        <!-- Verlinkte Grids -->
+        <a href="elektrotechnik.html" class="grid-item">
+            <i class="material-icons">electrical_services</i>
+            <h3>Elektrotechnik</h3>
+        </a>
+        <a href="it.html" class="grid-item">
+            <i class="material-icons">computer</i>
+            <h3>IT</h3>
+        </a>
+
+        <!-- Akkordeon-Grid -->
+        <div class="accordion-container">
+            <div class="accordion-header accordion-item">
+                <i class="material-icons">apps</i>
+                <h3>Mehr Themen</h3>
+                <i class="material-icons">expand_more</i>
+            </div>
+            <div class="accordion-content">
+                <a href="kontakt.html"><i class="material-icons">mail</i>Kontakt</a>
+                <a href="übermich.html"><i class="material-icons">person</i>Über Mich</a>
+                <a href="changelog.html"><i class="material-icons">settings</i>Changelog</a>
+                <a href="planung.html"><i class="material-icons">schedule</i>Planung</a>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -36,6 +195,21 @@
         <p>Neue Infos folgen bei Elektrotechnik und IT</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <script>
+        // Akkordeon Logik
+        const accordionHeader = document.querySelector('.accordion-header');
+        const accordionContent = document.querySelector('.accordion-content');
+
+        accordionHeader.addEventListener('click', function () {
+            if (accordionContent.style.maxHeight) {
+                accordionContent.style.maxHeight = null; // Versteckt den Inhalt
+            } else {
+                accordionContent.style.maxHeight = accordionContent.scrollHeight + "px"; // Setzt die Höhe auf die Scrollhöhe des Inhalts
+            }
+            accordionHeader.classList.toggle('active');
+        });
+    </script>
+
 </body>
+
 </html>
