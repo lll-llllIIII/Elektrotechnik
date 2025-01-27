@@ -1,140 +1,113 @@
-/* Allgemeine Stile */
-body {
-    font-family: "Nunito", sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #000000;
-    color: #e0e0e0;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
-    box-sizing: border-box;
+:root {
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --text-primary: rgba(255, 255, 255, 0.95);
+    --accent: #6CACE4;
+    --border: rgba(255, 255, 255, 0.08);
 }
 
-/* Globale Elemente */
-*,
-*::before,
-*::after {
-    box-sizing: inherit;
+/* Basisstile */
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Header */
 header {
-    background: #000000;
-    color: #e0e0e0;
-    padding: 20px;
+    padding: 6rem 1.5rem;
     text-align: center;
-    position: relative;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    border-bottom: 2px solid #333;
-    animation: slideInDown 0.5s ease-out; /* Animation für Header */
+    animation: fadeIn 0.8s ease-out;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.8em;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    color: #ffffff; /* Auffällige Farbe für die Hauptüberschrift */
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    opacity: 0;
+    animation: slideUp 0.8s 0.2s ease-out forwards;
 }
 
 /* Navigation */
 nav {
-    background: #000000;
-    padding: 10px 0;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 0.5s ease-out 0.2s; /* Animation für Navigation */
+    position: sticky;
+    top: 0;
+    background: var(--bg-primary);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
 }
 
 nav a {
-    color: #e0e0e0;
+    color: var(--text-primary);
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
     text-decoration: none;
-    padding: 10px 20px;
-    font-size: 1.2em;
-    display: inline-block;
-    transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
-    border-radius: 5px;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #17cdff;
-    background: #131313;
-    transform: scale(1.1);
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
 }
 
-/* Container */
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Grid-Layout */
 .container {
-    display: flex;
-    flex-direction: row;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
     max-width: 1200px;
-    padding: 20px;
-    gap: 20px;
-    animation: fadeInUp 0.7s ease-out; /* Animation für Container */
+    margin: 2rem auto;
+    padding: 0 1.5rem;
 }
 
 /* Sidebar */
 .sidebar {
-    flex: 0 0 320px;
-    padding: 20px;
-    background: #1e1e1e;
-    color: #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    animation: fadeInUp 0.7s ease-out 0.3s; /* Animation für Sidebar */
+    padding: 1.5rem;
+    border-right: 1px solid var(--border);
 }
 
 .sidebar h2 {
-    margin-top: 0;
-    font-size: 1.8em;
-    color: #ffffff;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
 }
 
 .sidebar ul li a {
+    padding: 0.8rem;
+    display: block;
+    color: var(--text-primary);
     text-decoration: none;
-    color: #e0e0e0;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.sidebar ul li a i {
-    margin-right: 10px;
+    transition: padding 0.3s ease;
 }
 
 .sidebar ul li a:hover {
-    color: #17cdff;
-    transform: scale(1.05);
+    padding-left: 1.2rem;
 }
 
-/* Content Bereich */
+/* Content */
 .content {
-    flex: 1;
-    padding: 20px;
-    background: #1e1e1e;
-    color: #e0e0e0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    animation: fadeInUp 0.7s ease-out 0.4s; /* Animation für Content */
+    padding: 2rem 1.5rem;
+    animation: fadeIn 0.8s 0.4s ease-out forwards;
 }
 
 .content h2 {
-    margin-top: 0;
-    font-size: 2.2em;
-    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
 }
 
 /* Bilder */
@@ -142,45 +115,33 @@ nav a:hover {
     width: 100%;
     height: auto;
     border-radius: 8px;
-    display: block;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    animation: fadeInUp 0.7s ease-out 0.5s; /* Animation für Bilder */
+    transition: transform 0.3s ease;
+}
+
+#img:hover {
+    transform: scale(1.02);
 }
 
 /* Footer */
 footer {
-    background: #000000;
-    color: #e0e0e0;
     text-align: center;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.4);
-    border-top: 2px solid #333;
-    animation: fadeInUp 0.5s ease-out 0.6s; /* Animation für Footer */
-}
-
-footer p {
-    margin: 5px 0;
-    font-size: 1em;
+    padding: 3rem 1.5rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+    opacity: 0;
+    animation: fadeIn 0.8s 0.6s ease-out forwards;
 }
 
 /* Animationen */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-@keyframes slideInDown {
+@keyframes slideUp {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -191,26 +152,20 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        flex-direction: column;
-        gap: 10px;
+        grid-template-columns: 1fr;
     }
-
+    
     .sidebar {
-        width: 100%;
-        margin: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 2rem;
     }
-
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
     .content {
-        margin: 0;
-    }
-}
-
-@media (min-width: 769px) {
-    .container {
-        padding: 20px;
-    }
-
-    .content {
-        margin-left: 20px;
+        padding: 1.5rem 0;
     }
 }
